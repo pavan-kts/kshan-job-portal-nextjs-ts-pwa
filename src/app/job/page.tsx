@@ -1,0 +1,81 @@
+import Navbar from '@/components/Navbar';
+import React from 'react';
+
+type Job = {
+  id: number;
+  title: string;
+  company: string;
+  location: string;
+  description: string;
+};
+
+const jobs: Job[] = [
+  {
+    id: 1,
+    title: 'Software Engineer',
+    company: 'Tech Innovators Inc.',
+    location: 'San Francisco, CA',
+    description: 'Develop and maintain software applications using modern technologies.',
+  },
+  {
+    id: 2,
+    title: 'Marketing Specialist',
+    company: 'Creative Solutions Ltd.',
+    location: 'New York, NY',
+    description: 'Plan and execute marketing campaigns to drive brand awareness and sales.',
+  },
+  {
+    id: 3,
+    title: 'Project Manager',
+    company: 'Business Corp.',
+    location: 'Austin, TX',
+    description: 'Oversee project timelines and ensure deliverables are met on schedule.',
+  },
+  {
+    id: 4,
+    title: 'UX/UI Designer',
+    company: 'Design Studio Co.',
+    location: 'Remote',
+    description: 'Design user interfaces and experiences for web and mobile applications.',
+  },
+  {
+    id: 5,
+    title: 'Data Analyst',
+    company: 'Analytics Gurus',
+    location: 'Boston, MA',
+    description: 'Analyze data to provide insights and support decision-making processes.',
+  },
+];
+
+const Jobs = () => {
+  return (
+    <>
+    <Navbar/>
+    <div className="bg-gray-100 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl font-extrabold text-gray-900 mb-8">Job Opportunities</h1>
+        <div className="grid grid-cols-1 gap-6">
+          {jobs.map((job) => (
+            <div key={job.id} className="bg-white rounded-lg shadow-md p-6">
+              <h2 className="text-2xl font-semibold text-gray-900">{job.title}</h2>
+              <p className="text-gray-600">{job.company} - {job.location}</p>
+              <p className="text-gray-700 mt-4">{job.description}</p>
+              <div className="mt-4">
+                <a
+                  href="#"
+                  className="text-indigo-600 hover:text-indigo-900 font-medium"
+                >
+                  View Details
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    <img src="/assets/img/Screenshot 2024-04-17 at 4.20 1.png" alt="" />
+    </>
+  );
+};
+
+export default Jobs;
