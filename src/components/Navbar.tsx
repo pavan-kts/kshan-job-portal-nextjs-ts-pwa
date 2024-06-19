@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div className={`bg-white dark:bg-gray-900 px-2`}>
+    <div className={`bg-white dark:bg-gray-900 px-4`}>
       <div className="container mx-auto py-2 flex flex-col lg:flex-row justify-between items-center">
         {/* Logo and Hamburger Icon for Mobile */}
         <div className="flex items-center justify-between w-full">
