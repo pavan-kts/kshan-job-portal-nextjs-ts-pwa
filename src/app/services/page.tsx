@@ -43,24 +43,24 @@ const services = [
 const Services = () => {
   return (
     <>
-    <Navbar/>
-    <div className="bg-gray-100 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-extrabold text-gray-900 mb-8">Our Services</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => (
-            <div key={service.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img src={service.image} alt={service.title} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h2 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h2>
-                <p className="text-gray-700">{service.description}</p>
+      <Navbar />
+      <div className="bg-gray-100 dark:bg-gray-900 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">Our Services</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service) => (
+              <div key={service.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                <img src={service.image} alt={service.title} className="w-full h-48 object-cover" />
+                <div className="p-4">
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{service.title}</h2>
+                  <p className="text-gray-700 dark:text-gray-400">{service.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-    <img src="/assets/img/Screenshot 2024-04-17 at 4.20 1.png" alt="" />
+      <img src="/assets/img/Screenshot 2024-04-17 at 4.20 1.png" alt="" className="dark:hidden" />
     </>
   );
 };

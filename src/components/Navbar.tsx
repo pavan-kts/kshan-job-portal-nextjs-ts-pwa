@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-gray-800">
       <div className="container mx-auto py-2 flex flex-col lg:flex-row justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
         <div className="block lg:hidden">
           <button
             onClick={toggleMenu}
-            className="text-gray-600 focus:outline-none focus:text-gray-900"
+            className="text-gray-600 dark:text-white focus:outline-none focus:text-gray-900"
           >
             <FaBars className="w-6 h-6" />
           </button>
@@ -48,10 +48,10 @@ const Navbar: React.FC = () => {
 
         {/* Sign Up and Sign In Buttons */}
         <div className="hidden lg:flex space-x-2">
-          <Link href={"/signup"} className="cursor-pointer text-black text-base font-normal px-4 py-2 rounded-lg hover:bg-gray-200">
+          <Link href={"/signup"} className="cursor-pointer text-black dark:text-white text-base font-normal px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
             Sign up
           </Link>
-          <Link href={"/signin"} className="bg-blue-500 rounded-lg w-22 cursor-pointer text-white text-base font-normal px-4 py-2 hover:bg-gray-800">
+          <Link href={"/signin"} className="bg-blue-500 dark:bg-gray-700 rounded-lg w-22 cursor-pointer text-white text-base font-normal px-4 py-2 hover:bg-gray-800 dark:hover:bg-gray-600">
             Sign In
           </Link>
         </div>
@@ -69,7 +69,7 @@ const NavItem: React.FC<NavItemProps> = ({ href, label }) => {
   return (
     <Link
       href={href}
-      className="text-blue-500 text-center text-base font-normal px-2 py-2 rounded-lg hover:bg-gray-200 block lg:inline-block"
+      className="text-blue-500 dark:text-white text-center text-base font-normal px-2 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 block lg:inline-block"
     >
       {label}
     </Link>

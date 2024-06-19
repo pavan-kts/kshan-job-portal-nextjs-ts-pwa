@@ -48,7 +48,7 @@ const RegisterPage: React.FC = () => {
         onSubmit={handleSubmit}
         className="bg-white dark:bg-gray-800 dark:text-gray-200 flex flex-col items-center justify-center p-6 rounded-lg shadow-md w-full max-w-md"
       >
-        <h2 className="text-2xl font-bold mb-6 text-center dark:text-gray-200">Sign Up</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
         <div className="mb-4 w-full">
           <input
             type="text"
@@ -56,7 +56,7 @@ const RegisterPage: React.FC = () => {
             placeholder="Enter your Firstname"
             onChange={handleInputChange}
             value={formData.firstname}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-400 dark:text-gray-200"
             required
           />
         </div>
@@ -67,7 +67,7 @@ const RegisterPage: React.FC = () => {
             placeholder="Enter your Lastname"
             onChange={handleInputChange}
             value={formData.lastname}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-400 dark:text-gray-200"
             required
           />
         </div>
@@ -78,7 +78,7 @@ const RegisterPage: React.FC = () => {
             placeholder="Enter your email"
             onChange={handleInputChange}
             value={formData.email}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-400 dark:text-gray-200"
             required
           />
         </div>
@@ -89,7 +89,7 @@ const RegisterPage: React.FC = () => {
             placeholder="Enter your password"
             onChange={handleInputChange}
             value={formData.password}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-400 dark:text-gray-200"
             required
           />
         </div>
@@ -100,19 +100,19 @@ const RegisterPage: React.FC = () => {
             placeholder="Confirm your password"
             onChange={handleInputChange}
             value={formData.confirmpassword}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-400 dark:text-gray-200"
             required
           />
         </div>
         <button
           type="submit"
-          className="py-2 bg-blue-500 text-white px-5 font-semibold rounded-lg hover:bg-blue-600 w-full max-w-sm"
+          className="py-2 bg-blue-500 text-white px-5 font-semibold rounded-lg hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-800 w-full max-w-sm"
         >
           Sign up
         </button>
         <Link
           href="/signin"
-          className="inline-block my-2 text-center rounded-lg hover:text-blue-600 dark:hover:text-blue-400"
+          className="inline-block my-2 text-center rounded-lg text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
         >
           Already registered? Sign in here
         </Link>

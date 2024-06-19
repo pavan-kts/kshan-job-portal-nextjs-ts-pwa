@@ -29,31 +29,31 @@ const CarouselHeroSec = () => {
   };
 
   return (
-    <div className="relative flex items-center w-full min-h-[474px] bg-gradient-to-r text-gray-800 from-[#E2FAFF] to-[#FFDCFB] py-8">
+    <div className="relative flex items-center w-full min-h-[474px] bg-gradient-to-r text-gray-800 from-[#E2FAFF] to-[#FFDCFB] dark:from-[#1A1A2E] dark:to-[#1F1F3A] py-8">
       <div className="flex flex-col items-center w-full max-w-screen-lg px-2 z-10">
         <div className="relative w-full md:w-[35vw] overflow-hidden">
           <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {slides.map((slide, index) => (
               <div key={index} className="flex-none w-full p-6">
                 <div className="flex flex-col items-center p-6 bg-opacity-50 rounded-lg">
-                  <h1 className="mb-4 w-full text-4xl lg:ml-16  text-center lg:text-start  font-semibold">{slide.title}</h1>
-                  <div className="details w-full mb-6 lg:ml-16  text-center lg:text-start  font-semibold">
+                  <h1 className="mb-4 w-full text-4xl lg:ml-16 text-center lg:text-start font-semibold dark:text-gray-200">{slide.title}</h1>
+                  <div className="details w-full mb-6 lg:ml-16 text-center lg:text-start font-semibold dark:text-gray-300">
                     <h6>{slide.company}</h6>
                     <h6>{slide.type}</h6>
                     <h6>{slide.date}</h6>
                   </div>
                   <div className="buttons flex flex-col lg:flex-row lg:w-full lg:ml-12">
-                    <Link href="#" className="px-4 py-2 mb-2 lg:mx-2 lg:mb-0 text-white bg-blue-600 rounded hover:bg-gray-800">Apply Now</Link>
-                    <Link href="#" className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-gray-800">View Details</Link>
+                    <Link href="#" className="px-4 py-2 mb-2 lg:mx-2 lg:mb-0 text-white bg-blue-600 rounded hover:bg-gray-800 dark:bg-blue-700 dark:hover:bg-blue-900">Apply Now</Link>
+                    <Link href="#" className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-gray-800 dark:bg-blue-700 dark:hover:bg-blue-900">View Details</Link>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <button onClick={handlePrev} className="absolute left-0 p-2 transform -translate-y-1/2 rounded-full top-1/2">
+          <button onClick={handlePrev} className="absolute left-0 p-2 transform -translate-y-1/2 rounded-full top-1/2 bg-white dark:bg-gray-700">
             <img src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/previous-icon.png" alt="Previous" className="w-6 h-6" />
           </button>
-          <button onClick={handleNext} className="absolute right-0 p-2 transform -translate-y-1/2 rounded-full top-1/2">
+          <button onClick={handleNext} className="absolute right-0 p-2 transform -translate-y-1/2 rounded-full top-1/2 bg-white dark:bg-gray-700">
             <img src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/next-icon.png" alt="Next" className="w-6 h-6" />
           </button>
         </div>
@@ -61,19 +61,19 @@ const CarouselHeroSec = () => {
           {slides.map((_, index) => (
             <li
               key={index}
-              className={`w-3 h-3 bg-gray-600 rounded-full ${index === currentSlide ? 'opacity-100' : 'opacity-50'}`}
+              className={`w-3 h-3 bg-gray-600 dark:bg-gray-400 rounded-full ${index === currentSlide ? 'opacity-100' : 'opacity-50'}`}
               onClick={() => setCurrentSlide(index)}
             ></li>
           ))}
         </ol>
       </div>
       <div className="absolute inset-0 z-0 items-center justify-end lg:right-[10vw] hidden lg:flex">
-          <div className="absolute w-[396px] h-[318px] transform rotate-[-13.42deg] bg-gray-400 rounded-[40px]"></div>
-          <div className="absolute w-[396px] h-[318px] transform rotate-[-10.86deg] bg-gray-500 rounded-[40px]"></div>
-          <div className="absolute w-[396px] h-[318px] transform rotate-[-7.15deg] bg-[#00081A] rounded-[40px]"></div>
-          <div className="absolute w-[289px] h-[282px] transform rotate-[-47.50deg] bg-gradient-to-r from-[#96ECFF] to-[#FFB8F8] blur-[131px] shadow-[131px]"></div>
-          <img className="absolute w-[612px] h-[408px] lg:right-[-6vw]" src="./assets/img/girl-with-mobile.png" alt="Girl with mobile" />
-        </div>
+        <div className="absolute w-[396px] h-[318px] transform rotate-[-13.42deg] bg-gray-400 dark:bg-gray-600 rounded-[40px]"></div>
+        <div className="absolute w-[396px] h-[318px] transform rotate-[-10.86deg] bg-gray-500 dark:bg-gray-700 rounded-[40px]"></div>
+        <div className="absolute w-[396px] h-[318px] transform rotate-[-7.15deg] bg-[#00081A] dark:bg-[#1a1a2e] rounded-[40px]"></div>
+        <div className="absolute w-[289px] h-[282px] transform rotate-[-47.50deg] bg-gradient-to-r from-[#96ECFF] to-[#FFB8F8] blur-[131px] shadow-[131px]"></div>
+        <img className="absolute w-[612px] h-[408px] lg:right-[-6vw]" src="./assets/img/girl-with-mobile.png" alt="Girl with mobile" />
+      </div>
     </div>
   );
 };
