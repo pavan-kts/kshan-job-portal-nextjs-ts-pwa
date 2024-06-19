@@ -5,6 +5,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
@@ -27,29 +28,29 @@ const Footer: React.FC = () => {
             <h3 className="font-bold mb-6 text-xl">Quick Links</h3>
             <ul>
               <li className="mb-1">
-                <a href="/contact" className="hover:underline">
+                <Link href="/contact-us" className="hover:underline">
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li className="mb-1">
-                <a href="/about" className="hover:underline">
+                <Link href="/about-us" className="hover:underline">
                   About Us
-                </a>
+                </Link>
               </li>
               <li className="mb-1">
-                <a href="/services" className="hover:underline">
+                <Link href="/services" className="hover:underline">
                   Services
-                </a>
+                </Link>
               </li>
               <li className="mb-1">
-                <a href="/privacy-policy" className="hover:underline">
+                <Link href="#" className="hover:underline">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li className="mb-1">
-                <a href="/blog" className="hover:underline">
+                <Link href="#" className="hover:underline">
                   Blog
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -71,40 +72,40 @@ const Footer: React.FC = () => {
                   <div className="h-6 w-6">
                     <FaWhatsapp className="h-6 w-6 text-[#27D045]" />
                   </div>
-                  <a href="tel:+919834611797" className="hover:underline pl-4">
+                  <Link href="https://wa.me/+919834611797" className="hover:underline pl-4">
                     +91-9834611797
-                  </a>
+                  </Link>
                   <br />
                 </div>
                 <div className="flex items-center mb-6">
                   <div className="h-6 w-6">
                     <IoIosMail className="h-6 w-6" />
                   </div>
-                  <a
+                  <Link
                     href="mailto:enquiry@kshantechsoft.com"
                     className="hover:underline pl-4"
                   >
                     enquiry@kshantechsoft.com
-                  </a>
+                  </Link>
                 </div>
               </address>
               <div className="flex my-6">
-                <a href="#" className="hover:underline mx-1 h-8 w-8">
+                <Link href="#" className="hover:underline mx-1 h-8 w-8">
                   <FaFacebook className="h-8 w-8 text-[#0863F7]" />
-                </a>
-                <a href="#" className="hover:underline mx-1 h-8 w-8">
+                </Link>
+                <Link href="#" className="hover:underline mx-1 h-8 w-8">
                   <AiFillTwitterCircle className="h-8 w-8 text-[#1DA1F2]" />
-                </a>
-                <a href="#" className="hover:underline mx-1 h-8 w-8">
+                </Link>
+                <Link href="http://www.linkedin.com/groups/Kshan-Tech-Soft-4847124/about" className="hover:underline mx-1 h-8 w-8">
                   <FaLinkedin className="h-8 w-8 text-[#0077B0]" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
       <hr />
-      <div className="flex justify-between items-center my-6">
+      <div className="flex justify-between items-center py-6">
         <div className="w-full text-sm text-center">
           &copy; 2024 Kshan Tech Soft Pvt. Ltd. All rights reserved.
         </div>

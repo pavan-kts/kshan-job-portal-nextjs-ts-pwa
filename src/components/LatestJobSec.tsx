@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const LatestJobSec = () => {
@@ -109,7 +110,7 @@ const LatestJobSec = () => {
                 <div className="text-gray-600 dark:text-gray-400 text-xs">Registration closes on</div>
                 <div className="text-gray-600 dark:text-gray-300 text-xs font-bold">{job.registration}</div>
               </div>
-              <a href="./Resume.html" className="bg-blue-600 dark:bg-blue-500 text-white rounded-md p-2 px-6 lg:mr-10 hover:bg-blue-700 dark:hover:bg-blue-400">Apply</a>
+              <Link href="#" className="bg-blue-600 dark:bg-blue-500 text-white rounded-md p-2 px-6 lg:mr-10 hover:bg-blue-700 dark:hover:bg-blue-400">Apply</Link>
             </div>
           </div>
         ))}

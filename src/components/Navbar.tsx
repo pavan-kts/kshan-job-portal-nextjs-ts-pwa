@@ -7,6 +7,7 @@ import { FaBars } from 'react-icons/fa'; // Import FaBars icon from react-icons/
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [currentPath, setCurrentPath] = useState("");
 
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -22,6 +23,12 @@ const Navbar: React.FC = () => {
       darkModeMediaQuery.removeEventListener('change', handleDarkModeChange);
     };
   }, []); // Empty dependency array ensures useEffect runs only on mount
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentPath(window.location.pathname);
+    }
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -53,13 +60,13 @@ const Navbar: React.FC = () => {
         {/* Menu Links */}
         <div className={`lg:flex lg:space-x-6 mt-4 lg:mt-0 ${isOpen ? 'block' : 'hidden'}`}>
           <div className="flex flex-col lg:flex-row lg:space-x-6">
-            <NavItem href="/" label="Home" />
-            <NavItem href="/services" label="Services" />
-            <NavItem href="/job" label="Job" />
-            <NavItem href="/training" label="Training" />
-            <NavItem href="/events" label="Events" />
-            <NavItem href="/contact-us" label="Contact" />
-            <NavItem href="/about-us" label="About" />
+            <NavItem href="/" label="Home" active={currentPath === "/"} />
+            <NavItem href="/services" label="Services" active={currentPath === "/services"} />
+            <NavItem href="/job" label="Job" active={currentPath === "/job"} />
+            <NavItem href="/training" label="Training" active={currentPath === "/training"} />
+            <NavItem href="/events" label="Events" active={currentPath === "/events"} />
+            <NavItem href="/contact-us" label="Contact" active={currentPath === "/contact-us"} />
+            <NavItem href="/about-us" label="About" active={currentPath === "/about-us"} />
           </div>
         </div>
 
@@ -80,13 +87,14 @@ const Navbar: React.FC = () => {
 interface NavItemProps {
   href: string;
   label: string;
+  active: boolean;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ href, label }) => {
+const NavItem: React.FC<NavItemProps> = ({ href, label, active }) => {
   return (
     <Link
       href={href}
-      className="text-blue-500 dark:text-white text-center text-base font-normal px-2 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 block lg:inline-block"
+      className={`text-blue-500 dark:text-white text-center text-base font-normal px-2 py-1 hover:bg-gray-200 dark:hover:bg-gray-700 block lg:inline-block ${active ? 'border-b-2 border-blue-500' : ''}`}
     >
       {label}
     </Link>

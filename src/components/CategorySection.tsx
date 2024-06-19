@@ -3,7 +3,7 @@ import Link from 'next/link';
 const categories = [
   { name: 'Business Development', jobs: 16, imgSrc: '/assets/img/handshake 1.png' },
   { name: 'NGO & Social Services', jobs: 6, imgSrc: '/assets/img/quality-of-life 1.png' },
-  { name: 'Information Technology', jobs: 28, imgSrc: '/assets/img/it 1.png', link: './Category.html#searchByCategory' },
+  { name: 'Information Technology', jobs: 28, imgSrc: '/assets/img/it 1.png', link: '#' },
   { name: 'Finance', jobs: 2, imgSrc: '/assets/img/bars 1.png' },
   { name: 'Human Resource', jobs: 10, imgSrc: '/assets/img/id-card 1.png' }
 ];
