@@ -1,23 +1,39 @@
 // src/components/Navbar.tsx
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaBars } from 'react-icons/fa'; // Import FaBars icon from react-icons/fa
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const handleDarkModeChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    setIsDarkMode(darkModeMediaQuery.matches);
+    darkModeMediaQuery.addEventListener('change', handleDarkModeChange);
+
+    return () => {
+      darkModeMediaQuery.removeEventListener('change', handleDarkModeChange);
+    };
+  }, []); // Empty dependency array ensures useEffect runs only on mount
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800">
+    <div className={`bg-white dark:bg-gray-900`}>
       <div className="container mx-auto py-2 flex flex-col lg:flex-row justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <img
-            src="./assets/img/kts-logo.png"
+            src={isDarkMode ? "/assets/img/Kshan_tech_soft_menu_white.png" : "./assets/img/kts-logo.png"}
             alt="Logo"
             className="w-56 h-auto my-5"
           />
@@ -27,7 +43,7 @@ const Navbar: React.FC = () => {
         <div className="block lg:hidden">
           <button
             onClick={toggleMenu}
-            className="text-gray-600 dark:text-white focus:outline-none focus:text-gray-900"
+            className="text-gray-600 dark:text-white focus:outline-none"
           >
             <FaBars className="w-6 h-6" />
           </button>

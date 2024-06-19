@@ -17,7 +17,7 @@ const CategorySection = () => {
           {categories.map((category, index) => (
             <Link key={index} href={category.link || '#'} passHref>
               <div className="flex flex-col items-center h-full p-6 bg-[#DEEFF9] dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="flex justify-center w-24 h-24 p-4 mb-4 bg-white dark:bg-gray-700 rounded-lg">
+                <div className="flex justify-center w-24 h-24 p-4 mb-4 bg-white rounded-lg">
                   <img src={category.imgSrc} alt={category.name} className="w-full h-full object-contain" />
                 </div>
                 <h3 className="text-lg font-medium text-center dark:text-gray-300">{category.name}</h3>

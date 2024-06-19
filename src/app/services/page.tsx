@@ -60,7 +60,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-      <img src="/assets/img/Screenshot 2024-04-17 at 4.20 1.png" alt="" className="dark:hidden" />
+      <img src="/assets/img/Screenshot 2024-04-17 at 4.20 1.png" alt="" className="" />
     </>
   );
 };
