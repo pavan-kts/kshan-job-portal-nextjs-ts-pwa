@@ -50,10 +50,10 @@ const CarouselHeroSec = () => {
               </div>
             ))}
           </div>
-          <button onClick={handlePrev} className="absolute left-0 p-2 transform -translate-y-1/2 rounded-full top-1/2 bg-white">
+          <button onClick={handlePrev} className="absolute left-0 p-2 transform -translate-y-1/2 rounded-full top-1/2">
             <img src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/previous-icon.png" alt="Previous" className="w-6 h-6" />
           </button>
-          <button onClick={handleNext} className="absolute right-0 p-2 transform -translate-y-1/2 rounded-full top-1/2 bg-white">
+          <button onClick={handleNext} className="absolute right-0 p-2 transform -translate-y-1/2 rounded-full top-1/2">
             <img src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/next-icon.png" alt="Next" className="w-6 h-6" />
           </button>
         </div>
