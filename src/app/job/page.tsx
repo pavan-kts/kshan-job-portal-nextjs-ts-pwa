@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import React from 'react';
 
@@ -73,7 +74,7 @@ const Jobs = () => {
           </div>
         </div>
       </div>
-      <img src="/assets/img/Screenshot 2024-04-17 at 4.20 1.png" alt="" className="" />
+      <Footer />
     </>
   );
 };
