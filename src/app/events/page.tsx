@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import Link from 'next/link';
 import React from 'react';
 
 type Event = {
@@ -53,12 +54,12 @@ const EventsPage = () => {
                 <p className="text-gray-600 dark:text-gray-400">{event.location}</p>
                 <p className="text-gray-700 dark:text-gray-300 mt-4">{event.description}</p>
                 <div className="mt-4">
-                  <a
+                  <Link
                     href="#"
                     className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-900 dark:hover:text-indigo-500 font-medium"
                   >
                     Learn More
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

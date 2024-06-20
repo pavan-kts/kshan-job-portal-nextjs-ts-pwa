@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import Link from 'next/link';
 import React from 'react';
 
 type Job = {
@@ -62,12 +63,12 @@ const Jobs = () => {
                 <p className="text-gray-600 dark:text-gray-400">{job.company} - {job.location}</p>
                 <p className="text-gray-700 dark:text-gray-300 mt-4">{job.description}</p>
                 <div className="mt-4">
-                  <a
+                  <Link
                     href="#"
                     className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-900 dark:hover:text-indigo-500 font-medium"
                   >
                     View Details
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

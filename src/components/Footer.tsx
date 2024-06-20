@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
                   <div className="h-6 w-6">
                     <FaWhatsapp className="h-6 w-6 text-[#27D045]" />
                   </div>
-                  <Link href="https://wa.me/+919834611797" className="hover:underline pl-4">
+                  <Link href="https://wa.me/+919834611797" target="_blank" className="hover:underline pl-4">
                     +91-9834611797
                   </Link>
                   <br />
@@ -84,19 +84,20 @@ const Footer: React.FC = () => {
                   <Link
                     href="mailto:enquiry@kshantechsoft.com"
                     className="hover:underline pl-4"
+                    target="_blank"
                   >
                     enquiry@kshantechsoft.com
                   </Link>
                 </div>
               </address>
               <div className="flex my-6">
-                <Link href="#" className="hover:underline mx-1 h-8 w-8">
-                  <FaFacebook className="h-8 w-8 text-[#0863F7]" />
+                <Link href="#" className="hover:underline mx-1 h-8 w-8" target="_blank">
+                  <FaFacebook className="h-7 w-7 text-[#0863F7]" />
                 </Link>
-                <Link href="#" className="hover:underline mx-1 h-8 w-8">
+                <Link href="#" className="hover:underline mx-1 h-8 w-8" target="_blank">
                   <AiFillTwitterCircle className="h-8 w-8 text-[#1DA1F2]" />
                 </Link>
-                <Link href="http://www.linkedin.com/groups/Kshan-Tech-Soft-4847124/about" className="hover:underline mx-1 h-8 w-8">
+                <Link href="http://www.linkedin.com/groups/Kshan-Tech-Soft-4847124/about" className="hover:underline mx-1 h-7 w-7" target="_blank">
                   <FaLinkedin className="h-8 w-8 text-[#0077B0]" />
                 </Link>
               </div>
