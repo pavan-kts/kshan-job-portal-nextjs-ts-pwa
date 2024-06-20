@@ -10,7 +10,7 @@ import Link from "next/link";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-darkblue bg-[#05003B] text-white md:bg-[url('/assets/img/map_bg_footer.png')] bg-no-repeat bg-contain bg-center">
-      <div className="container mx-auto px-4 py-10">
+      <div className="container mx-auto px-4 py-16">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-6 md:mb-0">
             <img

@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Hamburger Icon for Mobile */}
-      <div className="flex items-center justify-between p-4 border-b sticky top-0 z-50 w-full bg-white dark:bg-black border-gray-200 lg:hidden dark:border-gray-700">
+      <div className="flex items-center justify-between p-4 border-b sticky top-0 z-50 w-full bg-white dark:bg-gray-900 border-gray-200 lg:hidden dark:border-gray-700">
         <Link href="/" className="flex items-center space-x-2">
           <img
             src={
@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
 
       {/* Sidebar for Mobile */}
       <div
-        className={`fixed top-0 right-0 h-full bg-white dark:bg-black dark:text-white transform transition-transform ${
+        className={`fixed top-0 right-0 h-full bg-white dark:bg-gray-900 dark:text-white transform transition-transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } lg:hidden z-40`}
       >
