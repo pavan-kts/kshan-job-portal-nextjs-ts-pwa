@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaBars } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +40,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* Navbar for larger screens */}
-      <div className="bg-white dark:bg-gray-900 px-10 sticky top-0 z-40 h-[15vh] hidden lg:flex items-center justify-between shadow-md">
+      <div className="bg-white dark:bg-gray-900 px-10 sticky top-0 z-50 h-[15vh] hidden lg:flex items-center justify-between shadow-md">
         <Link href="/" className="flex items-center space-x-2">
           <img
             src={
@@ -97,8 +98,15 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Hamburger Icon for Mobile */}
-      <div className="flex items-center justify-between p-4 border-b sticky top-0 z-50 w-full bg-white dark:bg-gray-900 border-gray-200 lg:hidden dark:border-gray-700">
-        <Link href="/" className="flex items-center space-x-2">
+      <div
+        className={`flex items-center justify-between p-4 border-b sticky top-0 z-40 w-full h-[6rem] bg-white dark:bg-gray-900 border-gray-200 lg:hidden dark:border-gray-700`}
+      >
+        <Link
+          href="/"
+          className={`flex items-center space-x-2 ${
+            isOpen ? "hidden" : "block"
+          }`}
+        >
           <img
             src={
               isDarkMode
@@ -126,7 +134,7 @@ const Navbar: React.FC = () => {
         <div className="flex flex-col h-full">
           {/* Logo and Close Icon for Mobile */}
           <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-            <Link href="/" className="flex items-center space-x-2 pr-8">
+            <Link href="/" className="flex items-center space-x-2 pr-10">
               <img
                 src={
                   isDarkMode
@@ -137,10 +145,16 @@ const Navbar: React.FC = () => {
                 className="w-56 h-auto"
               />
             </Link>
+            <button
+              onClick={toggleMenu}
+              className="fixed right-4 z-50 text-gray-600 dark:text-white focus:outline-none lg:hidden"
+            >
+              <IoClose className="w-8 h-8" />
+            </button>
           </div>
 
           {/* Menu Links for Mobile */}
-          <div className="flex-grow p-4 space-y-2">
+          <div className="flex flex-col items-center p-4 space-y-2">
             <NavItem href="/" label="Home" active={currentPath === "/"} />
             <NavItem
               href="/services"

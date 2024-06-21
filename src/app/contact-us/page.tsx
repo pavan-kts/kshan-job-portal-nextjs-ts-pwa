@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 import React from "react";
 
 const Contact: React.FC = () => {
@@ -15,30 +16,30 @@ const Contact: React.FC = () => {
             Feel free to reach out to us with any questions or concerns.
           </p>
           <div className="flex flex-col md:flex-row bg-white p-6 rounded shadow-md dark:bg-gray-800">
-            <div className="w-full md:w-1/2 mb-4 md:mb-0 md:mr-4">
+            <div className="w-full md:w-1/2 mb-2 md:mb-0 md:mr-4">
               <h2 className="text-2xl font-bold mb-4 dark:text-gray-200">
                 Company Details
               </h2>
               <p className="dark:text-gray-400">
                 <strong>Address:</strong>
               </p>
-              <p className="mb-4 dark:text-gray-400">
+              <p className="mb-2 dark:text-gray-400">
                 103, 3rd floor, 74 Downtown, Shroff Road, Opp Union Bank of India, Baner, Pune 411045
               </p>
-              <div className="flex flex-col sm:flex-row ">
-                <div className="sm:mr-16">
+              <div className="flex flex-col sm:flex-row">
+                <div className="sm:mr-16 py-2 lg:py-3">
                   <p className="dark:text-gray-400">
                     <strong>Phone:</strong>
                   </p>
-                  <p className="mb-4 dark:text-gray-400">+91 9834611797</p>
+                  <Link href="https://wa.me/+919834611797" target="_blank" className="mb-4 dark:text-gray-400">+91 9834611797</Link>
                 </div>
-                <div>
+                <div className="py-2 lg:py-3">
                   <p className="dark:text-gray-400">
                     <strong>Email:</strong>
                   </p>
-                  <p className="mb-4 dark:text-gray-400">
+                  <Link href="mailto:enquiry@kshantechsoft.com" target="_blank" className="mb-4 dark:text-gray-400">
                     enquiry@kshantechsoft.com
-                  </p>
+                  </Link>
                 </div>
               </div>
               <iframe

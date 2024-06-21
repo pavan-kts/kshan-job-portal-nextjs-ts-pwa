@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react';
 import Link from 'next/link';
+import { IoIosArrowDropright, IoIosArrowDropleft } from "react-icons/io";
 
 interface Slide {
   title: string;
@@ -50,11 +51,12 @@ const CarouselHeroSec = () => {
               </div>
             ))}
           </div>
-          <button onClick={handlePrev} className="absolute left-0 p-2 transform -translate-y-1/2 rounded-full top-1/2">
-            <img src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/previous-icon.png" alt="Previous" className="w-6 h-6" />
+          <button onClick={handlePrev} className="absolute left-0 p-2 dark:text-white transform -translate-y-1/2 rounded-full top-1/2 w-6 h-6">
+          <IoIosArrowDropleft className='w-6 h-6'/>
           </button>
-          <button onClick={handleNext} className="absolute right-0 p-2 transform -translate-y-1/2 rounded-full top-1/2">
-            <img src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/next-icon.png" alt="Next" className="w-6 h-6" />
+          <button onClick={handleNext} className="absolute right-5 p-2 dark:text-white transform -translate-y-1/2 rounded-full top-1/2 w-6 h-6">
+          <IoIosArrowDropright className='w-6 h-6'/>
+            {/* <img src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/next-icon.png" alt="Next" className="w-6 h-6" /> */}
           </button>
         </div>
         <ol className="flex justify-center mt-4 space-x-2">
