@@ -20,25 +20,43 @@ const RegisterPage: React.FC = () => {
     confirmpassword: '',
   });
 
+  const [error, setError] = useState<string>('');
+
   const router = useRouter();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+    setFormData((prevFormData) => {
+      const updatedFormData = {
+        ...prevFormData,
+        [name]: value,
+      };
+      if(updatedFormData.confirmpassword || !updatedFormData.password){
+
+        if (updatedFormData.password === updatedFormData.confirmpassword) {
+          setError('');
+        } else {
+          setError('Passwords did not match');
+        }
+      }
+      return updatedFormData;
+    });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    if (formData.password !== formData.confirmpassword) {
+      return;
+    }
+
     console.log('firstname : ' + formData.firstname);
     console.log('lastname : ' + formData.lastname);
     console.log('Email : ' + formData.email);
     console.log('Password : ' + formData.password);
     console.log('confirmpassword : ' + formData.confirmpassword);
-    console.log(`User registered successfully. thank you ${formData.firstname}`);
-    alert(`User registered successfully. thank you ${formData.firstname}`);
+    console.log(`User registered successfully. Thank you ${formData.firstname}`);
+    alert(`User registered successfully. Thank you ${formData.firstname}`);
     router.push('/signin');
   };
 
@@ -103,6 +121,7 @@ const RegisterPage: React.FC = () => {
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-400 dark:text-gray-200"
             required
           />
+          {error && <p className="text-red-700 w-full text-left pl-1 font-semibold">{error}</p>}
         </div>
         <button
           type="submit"
@@ -116,12 +135,6 @@ const RegisterPage: React.FC = () => {
         >
           Already registered? Sign in here
         </Link>
-        {/* <Link
-          href="/"
-          className="inline-block my-2 text-center rounded-lg hover:text-blue-600 dark:hover:text-blue-400"
-        >
-          Go to Home Page
-        </Link> */}
       </form>
     </div>
   );
