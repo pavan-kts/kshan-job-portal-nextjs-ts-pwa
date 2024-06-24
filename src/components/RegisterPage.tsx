@@ -39,7 +39,7 @@ const RegisterPage: React.FC = () => {
     console.log('confirmpassword : ' + formData.confirmpassword);
     console.log(`User registered successfully. thank you ${formData.firstname}`);
     alert(`User registered successfully. thank you ${formData.firstname}`);
-    router.push('/login');
+    router.push('/signin');
   };
 
   return (
